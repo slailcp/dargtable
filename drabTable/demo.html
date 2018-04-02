@@ -14,7 +14,7 @@
 
     <body>
       <div style="">
-        <div class="Report">
+        <div class="tt">
       <table class="" border="1" cellspacing="0">
         <thead>
           <tr>
@@ -57,7 +57,9 @@
 <script>
 $(function(){
   var d1=new dragTable();
-  d1.init();
+  d1.init({
+    tabel: '.tt'
+  });
 })
 
 
