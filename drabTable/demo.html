@@ -14,7 +14,7 @@
 
     <body>
       <div style="">
-        <div class="tt">
+        <div class="Reports">
       <table class="" border="1" cellspacing="0">
         <thead>
           <tr>
@@ -58,7 +58,7 @@
 $(function(){
   var d1=new dragTable();
   d1.init({
-    tabel: '.tt'
+    tabel: '.Reports'
   });
 })
 
@@ -155,7 +155,7 @@ dragTable.prototype.setThTd = function(newsindex,type){
   var $th = $(this.set.tabel +' th').eq(oldIndex);
   $(this.set.tabel +' th').eq(newsindex)[type]($th.clone());
   $th.remove();
-  $('.Report tbody tr').each(function (index, tdelement) {
+  $(this.set.tabel +' tbody tr').each(function (index, tdelement) {
       var $td = $(tdelement).find('td').eq(oldIndex);
       $(tdelement).find('td').eq(newsindex)[type]($td.clone());
       $td.remove();
@@ -169,7 +169,7 @@ dragTable.prototype.showBorder = function(newsindex,css){
     return;
   }
   $(this.set.tabel +' th').eq(newsindex).css(css)
-  $('.Report tbody tr').each(function (index, tdelement) {
+  $(this.set.tabel +' tbody tr').each(function (index, tdelement) {
       $(tdelement).find('td').eq(newsindex).css(css);
   });
 }
